@@ -1,0 +1,255 @@
+$white: white;
+$black: black;
+$gray: #7d8f9e;
+$blue: #0d43cc;
+$darkBlue: #003091;
+$red: #9b4653;
+
+$light: #f4f4f4;
+$dark: #3c4650;
+
+$padding-l: 2rem 3rem;
+
+.sen {
+  font-family: "Sen", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: roboto;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: sen;
+}
+
+header {
+  height: 173px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: $padding-l;
+
+  nav {
+    ul {
+      display: flex;
+      li {
+        margin-right: 3rem;
+        a {
+          color: $light;
+          font-family: sen;
+          font-weight: 500;
+        }
+
+        a:hover {
+          color: $gray;
+        }
+      }
+
+      li:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}
+
+header.header-index {
+  background: linear-gradient($blue, transparent);
+}
+
+main div.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35)),
+    url(../img/banner/banner-madrid-1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: $padding-l;
+
+  h1 {
+    font-size: 3rem;
+    font-family: roboto;
+
+    span {
+      font-family: sen;
+    }
+  }
+
+  p {
+    font-size: 1.75rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  form {
+    position: relative;
+    width: fit-content;
+    input {
+      width: 50vw;
+      height: 2.3rem;
+      border-radius: 0.5rem;
+      border: none;
+      padding: 0.5rem;
+      color: $dark;
+    }
+    input::placeholder {
+      color: $gray;
+    }
+    input:focus {
+      outline: solid $red 4px;
+    }
+    button {
+      display: inline-flex;
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      color: $gray;
+      cursor: pointer;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+main section.services {
+  height: 300px;
+  display: flex;
+  gap: 2rem;
+}
+
+footer {
+  background-color: $dark;
+  color: $light;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-l;
+
+  div.links {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+
+    div span {
+      font-size: 1.75rem;
+      font-family: sen;
+      font-weight: bold;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .social-media a img {
+      height: 25px;
+      filter: invert(1);
+      margin-top: 1rem;
+    }
+
+    > div:last-child {
+      margin-right: 10rem;
+    }
+
+    ul li a:hover {
+      border-bottom: solid 2px $light;
+    }
+  }
+
+  div.credits {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    font-size: small;
+    color: #7d8f9e;
+
+    span {
+      font-weight: bold;
+    }
+
+    span:hover {
+      color: $light;
+    }
+  }
+}
+
+section.services {
+  .service-bubble {
+    display: inline-block;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .service-icon {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        color: $light;
+        font-size: 2.25rem;
+      }
+
+      svg {
+        height: 100px;
+        position: relative;
+      }
+
+      .bubble-circle {
+        fill: $blue;
+        transition: fill 0.1s ease-in-out;
+      }
+
+      .bubble-circle:hover {
+        fill: $darkBlue;
+        cursor: pointer;
+      }
+
+      .bubble-spikes {
+        visibility: hidden;
+      }
+    }
+  }
+  .service-name {
+    text-align: center;
+    font-family: sen;
+    color: $blue;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,219 @@
+.sen {
+  font-family: "Sen", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: roboto;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: sen;
+}
+
+header {
+  height: 173px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin-right: 3rem;
+}
+header nav ul li a {
+  color: #f4f4f4;
+  font-family: sen;
+  font-weight: 500;
+}
+header nav ul li a:hover {
+  color: #7d8f9e;
+}
+header nav ul li:last-of-type {
+  margin: 0;
+}
+
+header.header-index {
+  background: linear-gradient(#0d43cc, transparent);
+}
+
+main div.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35)), url(../img/banner/banner-madrid-1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 3rem;
+}
+main div.hero h1 {
+  font-size: 3rem;
+  font-family: roboto;
+}
+main div.hero h1 span {
+  font-family: sen;
+}
+main div.hero p {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+main div.hero form {
+  position: relative;
+  width: fit-content;
+}
+main div.hero form input {
+  width: 50vw;
+  height: 2.3rem;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  color: #3c4650;
+}
+main div.hero form input::placeholder {
+  color: #7d8f9e;
+}
+main div.hero form input:focus {
+  outline: solid #9b4653 4px;
+}
+main div.hero form button {
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  color: #7d8f9e;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+main section.services {
+  height: 300px;
+  display: flex;
+  gap: 2rem;
+}
+
+footer {
+  background-color: #3c4650;
+  color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3rem;
+}
+footer div.links {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+footer div.links div span {
+  font-size: 1.75rem;
+  font-family: sen;
+  font-weight: bold;
+}
+footer div.links .social-media {
+  display: flex;
+  gap: 0.5rem;
+}
+footer div.links .social-media a img {
+  height: 25px;
+  filter: invert(1);
+  margin-top: 1rem;
+}
+footer div.links > div:last-child {
+  margin-right: 10rem;
+}
+footer div.links ul li a:hover {
+  border-bottom: solid 2px #f4f4f4;
+}
+footer div.credits {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: small;
+  color: #7d8f9e;
+}
+footer div.credits span {
+  font-weight: bold;
+}
+footer div.credits span:hover {
+  color: #f4f4f4;
+}
+
+section.services .service-bubble {
+  display: inline-block;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.services .service-bubble .service-icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+section.services .service-bubble .service-icon span {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  color: #f4f4f4;
+  font-size: 2.25rem;
+}
+section.services .service-bubble .service-icon svg {
+  height: 100px;
+  position: relative;
+}
+section.services .service-bubble .service-icon .bubble-circle {
+  fill: #0d43cc;
+  transition: fill 0.1s ease-in-out;
+}
+section.services .service-bubble .service-icon .bubble-circle:hover {
+  fill: #003091;
+  cursor: pointer;
+}
+section.services .service-bubble .service-icon .bubble-spikes {
+  visibility: hidden;
+}
+section.services .service-name {
+  text-align: center;
+  font-family: sen;
+  color: #0d43cc;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */

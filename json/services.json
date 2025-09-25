@@ -1,0 +1,58 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "icon": "euro_symbol",
+      "name": "Economía <br> y hacienda",
+      "offCenter": true
+    },
+    {
+      "id": 2,
+      "icon": "directions_bike",
+      "name": "Cultura, ocio <br> y deporte",
+      "offCenter": false
+    },
+    {
+      "id": 3,
+      "icon": "school",
+      "name": "Educación <br> y empleo",
+      "offCenter": false
+    },
+    {
+      "id": 4,
+      "icon": "diversity_3",
+      "name": "Igualdad <br> y diversidad",
+      "offCenter": false
+    },
+    {
+      "id": 5,
+      "icon": "nature_people",
+      "name": "Medio ambiente",
+      "offCenter": false
+    },
+    {
+      "id": 6,
+      "icon": "directions_bus_filled",
+      "name": "Movilidad <br> y transporte",
+      "offCenter": false
+    },
+    {
+      "id": 7,
+      "icon": "crisis_alert",
+      "name": "Seguridad <br> y emergencias",
+      "offCenter": false
+    },
+    {
+      "id": 8,
+      "icon": "health_and_safety",
+      "name": "Servicios sociales <br> y salud",
+      "offCenter": false
+    },
+    {
+      "id": 9,
+      "icon": "apartment",
+      "name": "Vivienda, urbanismo <br> y obras",
+      "offCenter": false
+    }
+  ]
+}
