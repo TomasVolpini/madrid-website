@@ -31,6 +31,38 @@ h2,
 h3,
 h4 {
   font-family: sen;
+  margin-bottom: 1.5rem;
+  color: #0d43cc;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.7rem;
+  background-color: #0d43cc;
+  font-family: sen;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #003091;
+}
+
+section {
+  margin-top: 3rem;
+}
+
+section:first-of-type {
+  margin-top: 1rem;
+}
+
+section.spiky-bg h2 {
+  padding-left: 2rem;
+}
+
+section.spiky-bg {
+  margin-bottom: 0;
 }
 
 header {
@@ -81,6 +113,8 @@ main div.hero {
 main div.hero h1 {
   font-size: 3rem;
   font-family: roboto;
+  margin: 0;
+  color: white;
 }
 main div.hero h1 span {
   font-family: sen;
@@ -119,12 +153,6 @@ main div.hero form button {
   right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
-}
-
-main section.services {
-  height: 300px;
-  display: flex;
-  gap: 2rem;
 }
 
 footer {
@@ -174,46 +202,137 @@ footer div.credits span:hover {
   color: #f4f4f4;
 }
 
-section.services .service-bubble {
-  display: inline-block;
+main section.services {
+  padding: 2rem 3rem;
+  height: auto;
+}
+main section.services h2 {
+  color: #0d43cc;
+}
+main section.services #bubbles-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+main section.services #bubbles-container .service-bubble {
   width: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-section.services .service-bubble .service-icon {
+main section.services #bubbles-container .service-bubble .service-icon {
   position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
-section.services .service-bubble .service-icon span {
+main section.services #bubbles-container .service-bubble .service-icon span {
   position: absolute;
   z-index: 2;
   pointer-events: none;
   color: #f4f4f4;
   font-size: 2.25rem;
 }
-section.services .service-bubble .service-icon svg {
+main section.services #bubbles-container .service-bubble .service-icon span.offCenter {
+  margin-right: 0.3rem;
+}
+main section.services #bubbles-container .service-bubble .service-icon svg {
   height: 100px;
   position: relative;
 }
-section.services .service-bubble .service-icon .bubble-circle {
+main section.services #bubbles-container .service-bubble .service-icon .bubble-circle {
   fill: #0d43cc;
   transition: fill 0.1s ease-in-out;
 }
-section.services .service-bubble .service-icon .bubble-circle:hover {
+main section.services #bubbles-container .service-bubble .service-icon .bubble-circle:hover {
   fill: #003091;
   cursor: pointer;
 }
-section.services .service-bubble .service-icon .bubble-spikes {
+main section.services #bubbles-container .service-bubble .service-icon .bubble-spikes {
   visibility: hidden;
 }
-section.services .service-name {
+main section.services #bubbles-container .service-name {
   text-align: center;
   font-family: sen;
   color: #0d43cc;
   font-weight: bold;
+  font-size: 1rem;
+}
+
+.spikes-divider-top,
+.spikes-divider-bottom {
+  line-height: 0;
+}
+.spikes-divider-top svg path,
+.spikes-divider-bottom svg path {
+  fill: #f4f4f4;
+}
+
+main section#news-section div#news-container {
+  background-color: #f4f4f4;
+  padding: 2rem 3rem;
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+}
+main section#news-section div#news-container div.news-card {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: end;
+  padding: 1.5rem;
+  box-shadow: #3c4650 2px 2px 5px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s linear;
+  cursor: pointer;
+}
+main section#news-section div#news-container div.news-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+main section#news-section div#news-container div.news-card p.news-head {
+  color: white;
+  font-size: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+main section#news-section div#news-container div.news-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* encima de la img, debajo del contenido */
+  pointer-events: none; /* no bloquea clicks */
+  background-image: linear-gradient(to top, #0d43cc 5%, transparent 50%);
+  background-size: 100% 150%, cover;
+  background-position: 0 75%, center;
+  transition: background-position 0.2s linear;
+}
+main section#news-section div#news-container div.news-card:hover::after {
+  background-position: 0 100%, center;
+}
+main section#news-section div#news-container div.news-card:hover {
+  transform: scale(1.05);
+  box-shadow: #3c4650 3px 3px 6px;
+  text-decoration: underline white;
+}
+main section#news-section div#news-buttons {
+  padding-top: 2rem;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

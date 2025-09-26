@@ -9,6 +9,7 @@ $light: #f4f4f4;
 $dark: #3c4650;
 
 $padding-l: 2rem 3rem;
+$padding-xaxis-l: 2rem;
 
 .sen {
   font-family: "Sen", sans-serif;
@@ -43,6 +44,38 @@ h2,
 h3,
 h4 {
   font-family: sen;
+  margin-bottom: 1.5rem;
+  color: $blue;
+}
+
+.button {
+  display: inline-block;
+  color: $white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.7rem;
+  background-color: $blue;
+  font-family: sen;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: $darkBlue;
+}
+
+section {
+  margin-top: 3rem;
+}
+
+section:first-of-type {
+  margin-top: 1rem;
+}
+
+section.spiky-bg h2 {
+  padding-left: $padding-xaxis-l;
+}
+
+section.spiky-bg {
+  margin-bottom: 0;
 }
 
 header {
@@ -99,6 +132,8 @@ main div.hero {
   h1 {
     font-size: 3rem;
     font-family: roboto;
+    margin: 0;
+    color: $white;
 
     span {
       font-family: sen;
@@ -141,12 +176,6 @@ main div.hero {
       transform: translateY(-50%);
     }
   }
-}
-
-main section.services {
-  height: 300px;
-  display: flex;
-  gap: 2rem;
 }
 
 footer {
@@ -205,51 +234,154 @@ footer {
   }
 }
 
-section.services {
-  .service-bubble {
-    display: inline-block;
-    width: 100px;
+main section.services {
+  padding: $padding-l;
+  height: auto;
+
+  h2 {
+    color: $blue;
+  }
+
+  #bubbles-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .service-icon {
-      position: relative;
-      display: inline-flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+
+    .service-bubble {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
 
-      span {
-        position: absolute;
-        z-index: 2;
-        pointer-events: none;
-        color: $light;
-        font-size: 2.25rem;
-      }
-
-      svg {
-        height: 100px;
+      .service-icon {
         position: relative;
-      }
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
-      .bubble-circle {
-        fill: $blue;
-        transition: fill 0.1s ease-in-out;
-      }
+        span {
+          position: absolute;
+          z-index: 2;
+          pointer-events: none;
+          color: $light;
+          font-size: 2.25rem;
+        }
 
-      .bubble-circle:hover {
-        fill: $darkBlue;
-        cursor: pointer;
-      }
+        span.offCenter {
+          margin-right: 0.3rem;
+        }
 
-      .bubble-spikes {
-        visibility: hidden;
+        svg {
+          height: 100px;
+          position: relative;
+        }
+
+        .bubble-circle {
+          fill: $blue;
+          transition: fill 0.1s ease-in-out;
+        }
+
+        .bubble-circle:hover {
+          fill: $darkBlue;
+          cursor: pointer;
+        }
+
+        .bubble-spikes {
+          visibility: hidden;
+        }
       }
     }
+    .service-name {
+      text-align: center;
+      font-family: sen;
+      color: $blue;
+      font-weight: bold;
+      font-size: 1rem;
+    }
   }
-  .service-name {
-    text-align: center;
-    font-family: sen;
-    color: $blue;
-    font-weight: bold;
+}
+
+.spikes-divider-top,
+.spikes-divider-bottom {
+  line-height: 0;
+
+  svg path {
+    fill: $light;
+  }
+}
+
+main section#news-section {
+  div#news-container {
+    background-color: $light;
+    padding: $padding-l;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+
+    div.news-card {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+      width: 300px;
+      border-radius: 1.5rem;
+
+      display: flex;
+      align-items: end;
+      padding: 1.5rem;
+      box-shadow: $dark 2px 2px 5px;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s linear;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      p.news-head {
+        color: $white;
+        font-size: 0.75rem;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    div.news-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* encima de la img, debajo del contenido */
+      pointer-events: none; /* no bloquea clicks */
+      background-image: linear-gradient(to top, $blue 5%, transparent 50%);
+
+      background-size: 100% 150%, cover;
+      background-position: 0 75%, center;
+      transition: background-position 0.2s linear;
+    }
+    div.news-card:hover::after {
+      background-position: 0 100%, center;
+    }
+    div.news-card:hover {
+      transform: scale(1.05);
+      box-shadow: $dark 3px 3px 6px;
+      text-decoration: underline white;
+    }
+  }
+
+  div#news-buttons {
+    padding-top: 2rem;
+    background-color: $light;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "thumb-centro-ocio.webp",
+    "alt": "Centro de ocio y asesoramiento juvenil",
+    "heading": "El Ayuntamiento dedica 5,8 millones a los nuevos centros de ocio y asesoramiento juvenil, de apoyo a su empleabilidad y salud emocional",
+    "url": "#"
+  },
+  {
+    "id": 2,
+    "thumbnail": "thumb-wem-rueda.webp",
+    "alt": "Nueva Escuela Municipal de Cuidados",
+    "heading": "El Ayuntamiento aprueba destinar 3,5 millones de euros a la nueva Escuela Municipal de Cuidados",
+    "url": "#"
+  },
+  {
+    "id": 3,
+    "thumbnail": "thumb-wem.webp",
+    "alt": "Centros de día infantiles de Cruz Roja",
+    "heading": "El Ayuntamiento cofinancia con 2,75 millones de euros los centros de día infantiles de Cruz Roja",
+    "url": "#"
+  }
+]
