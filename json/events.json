@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "event-1.webp",
+    "alt": "Fiestas de los Distritos 2025",
+    "heading": "Fiestas de los Distritos 2025",
+    "url": "#",
+    "date": "20250101"
+  },
+  {
+    "id": 2,
+    "thumbnail": "event-2.webp",
+    "alt": "Día Europeo de la música",
+    "heading": "Día Europeo de la música",
+    "url": "#",
+    "date": "20250102"
+  },
+  {
+    "id": 3,
+    "thumbnail": "event-3.webp",
+    "alt": "Vota por la restauración de la Puerta de Alcalá. Premio del Público 2025",
+    "heading": "Vota por la restauración de la Puerta de Alcalá. Premio del Público 2025",
+    "url": "#",
+    "date": "20250103"
+  },
+  {
+    "id": 4,
+    "thumbnail": "event-4.webp",
+    "alt": "Exposición Europa ilustra",
+    "heading": "Exposición Europa ilustra",
+    "url": "#",
+    "date": "20250104"
+  },
+  {
+    "id": 5,
+    "thumbnail": "event-5.webp",
+    "alt": "Día internacional del yoga",
+    "heading": "Día internacional del yoga",
+    "url": "#",
+    "date": "20250105"
+  },
+  {
+    "id": 6,
+    "thumbnail": "event-6.webp",
+    "alt": "Festival de teatro clásico",
+    "heading": "Festival de teatro clásico",
+    "url": "#",
+    "date": "20250106"
+  }
+]

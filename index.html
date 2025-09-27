@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madrid - inicio</title>
+    <title>Madrid - Inicio</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,7 +121,60 @@
                 </g>
             </svg>
         </div>
+        <section id="events-section">
+            <h2>Eventos</h2>
+            <div id="events-container">
+                <div id="date-container">
+                    <div id="calendar-container">
+                        <div id="calendar-header">
+                            <button id="backButton"> <span class="material-icons">
+                                    arrow_back_ios
+                                </span> </button>
+                            <div id="monthDisplay"></div>
+                            <button id="nextButton"><span class="material-icons">
+                                    arrow_forward_ios
+                                </span></button>
+                            <button id="refreshCalendar"><span class="material-icons">
+                                    refresh
+                                </span></button>
 
+                        </div>
+
+                        <div id="calendar-weekdays">
+                            <div>L</div>
+                            <div>M</div>
+                            <div>X</div>
+                            <div>J</div>
+                            <div>V</div>
+                            <div>S</div>
+                            <div>D</div>
+                        </div>
+
+                        <div id="calendar-days"></div>
+                    </div>
+                    <div id="date-showcase"></div>
+                </div>
+
+
+                <template id="events-template">
+                    <div class="event-card">
+                        <img class="event-thumb" src="" alt="">
+                        <p class="event-head">
+                        </p>
+                    </div>
+                </template>
+
+                <template id="empty-event-template">
+                    <div class="event-card no-events">
+                        <p class="event-head"> No hay más eventos para mostrar.
+                        </p>
+                    </div>
+                </template>
+
+
+            </div>
+
+        </section>
 
 
     </main>

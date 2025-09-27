@@ -6,6 +6,7 @@ $darkBlue: #003091;
 $red: #9b4653;
 
 $light: #f4f4f4;
+$light-semi: #f4f4f480;
 $dark: #3c4650;
 
 $padding-l: 2rem 3rem;
@@ -33,6 +34,11 @@ $padding-xaxis-l: 2rem;
   text-decoration: none;
   list-style: none;
   font-family: roboto;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
 }
 
 a {
@@ -334,7 +340,7 @@ main section#news-section {
       transition: transform 0.2s ease-in-out, box-shadow 0.2s linear;
       cursor: pointer;
 
-      img {
+      img.news-thumb {
         position: absolute;
         top: 0;
         left: 0;
@@ -359,8 +365,8 @@ main section#news-section {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; /* encima de la img, debajo del contenido */
-      pointer-events: none; /* no bloquea clicks */
+      z-index: 1;
+      pointer-events: none;
       background-image: linear-gradient(to top, $blue 5%, transparent 50%);
 
       background-size: 100% 150%, cover;
@@ -383,5 +389,192 @@ main section#news-section {
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+}
+
+section#events-section {
+  padding: $padding-l;
+}
+
+#events-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+
+  .event-card {
+    height: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 2rem;
+
+    padding: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    img.event-thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    p.event-head {
+      position: absolute;
+      top: 75%;
+      left: 0;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .event-card:hover {
+    text-decoration: underline white;
+  }
+
+  .event-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    z-index: 1;
+    pointer-events: none;
+    background-color: $dark;
+    filter: opacity(0.5);
+  }
+
+  .event-card:hover::after {
+    filter: opacity(0.7);
+  }
+
+  .no-events {
+    background-color: $gray;
+    pointer-events: none;
+  }
+}
+
+#date-container {
+  background-color: $blue;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / 3;
+  border-radius: 2rem;
+}
+
+#date-showcase {
+  display: flex;
+  font-size: 3rem;
+  color: $white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#calendar-container {
+  height: 225px;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 6fr;
+
+  #calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+
+    #monthDisplay {
+      font-family: sen;
+      font-weight: 600;
+      color: $white;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      filter: invert(1);
+    }
+  }
+
+  #calendar-weekdays {
+    color: $light;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+    border: 0.5px solid white;
+    border-bottom: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    div {
+      border: 0.5px solid white;
+      border-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border: 0.5px solid white;
+
+    .day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sen;
+      color: $light;
+      font-weight: 500;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .day:hover {
+      background-color: $darkBlue;
+    }
+
+    .day + #currentDay {
+      background-color: $light;
+      color: $blue;
+      font-weight: bold;
+    }
+
+    .empty-day {
+      pointer-events: none;
+    }
+
+    .day,
+    .empty-day {
+      border: 0.5px solid white;
+    }
+
+    .day-past {
+      color: $light-semi;
+      pointer-events: none;
+    }
+
+    .selected-day {
+      background-color: $light-semi;
+    }
+
+    .selected-day:hover {
+      background-color: $light;
+      color: $blue;
+    }
   }
 }
