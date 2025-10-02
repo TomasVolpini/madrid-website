@@ -47,8 +47,6 @@ function renderEvents(events) {
     }
   });
 
-  console.log(eventsLots);
-
   if (eventsLots > 0) {
     for (let i = 0; i < eventsLots; i++) {
       const empty = etp.content.cloneNode(true);
@@ -108,8 +106,3 @@ function initButtons() {
 
 initButtons();
 fetchEvents();
-
-document.getElementById("console").addEventListener("click", () => {
-  console.log("events dateFilter", dateFilter);
-  console.log("events", eventDay);
-});

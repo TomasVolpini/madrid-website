@@ -1,0 +1,31 @@
+{
+  "name": "Madrid",
+  "id": "Mad",
+  "population": 3527924,
+  "popExt": 7009268,
+  "ndistrict": 21,
+  "nbarrios": 131,
+  "district": [
+    { "name": "Arganzuela", "id": "Arg", "population": 153304, "barrios": 7 },
+    { "name": "Barajas", "id": "Bar", "population": 48646, "barrios": 5 },
+    { "name": "Carabanchel", "id": "Car", "population": 262339, "barrios": 7 },
+    { "name": "Centro", "id": "Cen", "population": 139687, "barrios": 6 },
+    { "name": "Chamartín", "id": "Chma", "population": 144796, "barrios": 6 },
+    { "name": "Chamberí", "id": "Chmb", "population": 138204, "barrios": 6 },
+    { "name": "Ciudad Lineal", "id": "Ciu", "population": 220345, "barrios": 9 },
+    { "name": "Fuencarral-El Pardo", "id": "Fue", "population": 248443, "barrios": 8 },
+    { "name": "Hortaleza", "id": "Hor", "population": 198391, "barrios": 6 },
+    { "name": "Latina", "id": "Lat", "population": 241672, "barrios": 7 },
+    { "name": "Moncloa-Aravaca", "id": "Mon", "population": 121757, "barrios": 7 },
+    { "name": "Moratalaz", "id": "Mor", "population": 92814, "barrios": 6 },
+    { "name": "Puente de Vallecas", "id": "Pue", "population": 241603, "barrios": 6 },
+    { "name": "Retiro", "id": "Ret", "population": 117918, "barrios": 6 },
+    { "name": "Salamanca", "id": "Sal", "population": 145702, "barrios": 6 },
+    { "name": "San Blas-Canillejas", "id": "San", "population": 161219, "barrios": 8 },
+    { "name": "Tetuán", "id": "Tet", "population": 160002, "barrios": 6 },
+    { "name": "Usera", "id": "Use", "population": 142746, "barrios": 7 },
+    { "name": "Vicálvaro", "id": "Vic", "population": 83804, "barrios": 4 },
+    { "name": "Villa de Vallecas", "id": "Viva", "population": 117501, "barrios": 3 },
+    { "name": "Villaverde", "id": "Vive", "population": 159038, "barrios": 5 }
+  ]
+}

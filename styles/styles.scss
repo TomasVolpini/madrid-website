@@ -1,16 +1,19 @@
+//sass -w ./styles/styles.scss:./styles/styles.css
+
 $white: white;
 $black: black;
 $gray: #7d8f9e;
 $blue: #0d43cc;
 $darkBlue: #003091;
 $red: #9b4653;
+$red-semi: #9b465380;
 
 $light: #f4f4f4;
 $light-semi: #f4f4f480;
 $dark: #3c4650;
 
 $padding-l: 2rem 3rem;
-$padding-xaxis-l: 2rem;
+$padding-xaxis-l: 3rem;
 
 .sen {
   font-family: "Sen", sans-serif;
@@ -39,6 +42,13 @@ $padding-xaxis-l: 2rem;
 button {
   all: unset;
   cursor: pointer;
+}
+
+div.section-buttons {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 a {
@@ -90,7 +100,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   padding: $padding-l;
@@ -384,16 +394,16 @@ main section#news-section {
   }
 
   div#news-buttons {
-    padding-top: 2rem;
     background-color: $light;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
   }
 }
 
 section#events-section {
   padding: $padding-l;
+
+  div.event-buttons {
+    margin-top: 2rem;
+  }
 }
 
 #events-container {
@@ -577,4 +587,91 @@ section#events-section {
       color: $blue;
     }
   }
+}
+
+section#map-section {
+  padding: $padding-l;
+
+  div#districts {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    div#district-list-desktop ul {
+      max-height: 300px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: $dark;
+
+      // li:hover {
+      //   color: $red;
+      //   cursor: pointer;
+      // }
+    }
+
+    div#district-map-info {
+      border: 2px solid $light;
+      padding: 2rem 3rem;
+      border-radius: 4rem;
+      display: flex;
+      align-items: start;
+      gap: 6rem;
+      margin-top: -3rem;
+
+      #district-info {
+        color: $dark;
+        h3 {
+          color: $dark;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-family: Sen;
+          font-weight: bold;
+        }
+
+        a {
+          display: inline-block;
+          font-family: Sen;
+          font-weight: 600;
+          margin-top: 3rem;
+        }
+
+        a:hover {
+          color: $red;
+          text-decoration: underline 2px $red;
+        }
+      }
+
+      #district-map svg {
+        height: 300px;
+      }
+    }
+
+    div#district-map-info:has(a:hover) {
+      border: 2px solid $red;
+
+      #district-info h3 {
+        color: $red;
+      }
+    }
+  }
+
+  .district-hover {
+    fill: $red-semi;
+    color: $red-semi;
+    cursor: pointer;
+  }
+
+  .district-clicked {
+    fill: $red;
+    color: $red;
+  }
+
+  // path.cls-3:hover {
+  //   fill: $red;
+  // }
 }

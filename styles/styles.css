@@ -27,6 +27,13 @@ button {
   cursor: pointer;
 }
 
+div.section-buttons {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 a {
   color: inherit;
 }
@@ -63,7 +70,7 @@ section:first-of-type {
 }
 
 section.spiky-bg h2 {
-  padding-left: 2rem;
+  padding-left: 3rem;
 }
 
 section.spiky-bg {
@@ -76,7 +83,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   padding: 2rem 3rem;
@@ -131,6 +138,7 @@ main div.hero p {
 }
 main div.hero form {
   position: relative;
+  width: -moz-fit-content;
   width: fit-content;
 }
 main div.hero form input {
@@ -140,6 +148,9 @@ main div.hero form input {
   border: none;
   padding: 0.5rem;
   color: #3c4650;
+}
+main div.hero form input::-moz-placeholder {
+  color: #7d8f9e;
 }
 main div.hero form input::placeholder {
   color: #7d8f9e;
@@ -301,7 +312,8 @@ main section#news-section div#news-container div.news-card img.news-thumb {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 main section#news-section div#news-container div.news-card p.news-head {
@@ -330,18 +342,18 @@ main section#news-section div#news-container div.news-card:hover::after {
 main section#news-section div#news-container div.news-card:hover {
   transform: scale(1.05);
   box-shadow: #3c4650 3px 3px 6px;
-  text-decoration: underline white;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
 }
 main section#news-section div#news-buttons {
-  padding-top: 2rem;
   background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
 }
 
 section#events-section {
   padding: 2rem 3rem;
+}
+section#events-section div.event-buttons {
+  margin-top: 2rem;
 }
 
 #events-container {
@@ -365,7 +377,8 @@ section#events-section {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 0;
 }
 #events-container .event-card p.event-head {
@@ -379,7 +392,8 @@ section#events-section {
   z-index: 2;
 }
 #events-container .event-card:hover {
-  text-decoration: underline white;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
 }
 #events-container .event-card::after {
   content: "";
@@ -505,4 +519,69 @@ section#events-section {
   color: #0d43cc;
 }
 
-/*# sourceMappingURL=styles.css.map */
+section#map-section {
+  padding: 2rem 3rem;
+}
+section#map-section div#districts {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+section#map-section div#districts div#district-list-desktop ul {
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #3c4650;
+}
+section#map-section div#districts div#district-map-info {
+  border: 2px solid #f4f4f4;
+  padding: 2rem 3rem;
+  border-radius: 4rem;
+  display: flex;
+  align-items: start;
+  gap: 6rem;
+  margin-top: -3rem;
+}
+section#map-section div#districts div#district-map-info #district-info {
+  color: #3c4650;
+}
+section#map-section div#districts div#district-map-info #district-info h3 {
+  color: #3c4650;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+section#map-section div#districts div#district-map-info #district-info p {
+  font-family: Sen;
+  font-weight: bold;
+}
+section#map-section div#districts div#district-map-info #district-info a {
+  display: inline-block;
+  font-family: Sen;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+section#map-section div#districts div#district-map-info #district-info a:hover {
+  color: #9b4653;
+  -webkit-text-decoration: underline 2px #9b4653;
+          text-decoration: underline 2px #9b4653;
+}
+section#map-section div#districts div#district-map-info #district-map svg {
+  height: 300px;
+}
+section#map-section div#districts div#district-map-info:has(a:hover) {
+  border: 2px solid #9b4653;
+}
+section#map-section div#districts div#district-map-info:has(a:hover) #district-info h3 {
+  color: #9b4653;
+}
+section#map-section .district-hover {
+  fill: rgba(155, 70, 83, 0.5019607843);
+  color: rgba(155, 70, 83, 0.5019607843);
+  cursor: pointer;
+}
+section#map-section .district-clicked {
+  fill: #9b4653;
+  color: #9b4653;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=m9OSBJaQTlM
+
 let nav = 0;
 let clicked = new Date();
 let selectedDaySquare = null;
@@ -118,7 +120,6 @@ function renderDate() {
   const dayFilter = partsFilter.find((p) => p.type === "day").value.toString();
 
   dateFilter = parseInt(yearFilter + monthFilter + dayFilter);
-  console.log("calendar dateFilter", dateFilter);
 }
 
 function initButtons() {
