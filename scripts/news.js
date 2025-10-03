@@ -15,7 +15,7 @@ function renderNews(news) {
   });
 }
 
-fetch("../json/news.json")
+fetch("./json/news.json")
   .then((res) => res.json())
   .then((data) => {
     renderNews(data);

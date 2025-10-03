@@ -111,7 +111,7 @@ function clickedDistrict(info, id) {
   }
 }
 
-fetch("../json/map.json")
+fetch("./json/map.json")
   .then((res) => res.json())
   .then((data) => {
     renderDistrictList(data.district);

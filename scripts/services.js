@@ -40,7 +40,7 @@ function morphBubbles(servicios) {
   });
 }
 
-fetch("../json/services.json")
+fetch("./json/services.json")
   .then((res) => res.json())
   .then((data) => {
     renderBubbles(data.services);

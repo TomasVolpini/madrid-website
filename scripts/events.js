@@ -58,7 +58,7 @@ function renderEvents(events) {
 }
 
 function fetchEvents() {
-  fetch("../json/events.json")
+  fetch("./json/events.json")
     .then((res) => res.json())
     .then((data) => {
       data.forEach((data) => {
