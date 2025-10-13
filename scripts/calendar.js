@@ -66,7 +66,7 @@ function load() {
         daySquare.id = "currentDay";
       }
 
-      if ((i < day && nav === 0) || nav < 0) {
+      if ((i < day + paddingDays && nav === 0) || nav < 0) {
         daySquare.classList.add("day-past");
       }
     } else {
