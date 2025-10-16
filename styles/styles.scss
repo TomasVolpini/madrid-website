@@ -15,6 +15,9 @@ $dark: #3c4650;
 $padding-l: 2rem 3rem;
 $padding-xaxis-l: 3rem;
 
+$padding-s: 2rem 1.5rem;
+$padding-xaxis-s: 1.5rem;
+
 .sen {
   font-family: "Sen", sans-serif;
   font-optical-sizing: auto;
@@ -37,6 +40,7 @@ $padding-xaxis-l: 3rem;
   text-decoration: none;
   list-style: none;
   font-family: roboto;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -49,6 +53,7 @@ div.section-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  text-align: center;
 }
 
 a {
@@ -94,6 +99,12 @@ section.spiky-bg {
   margin-bottom: 0;
 }
 
+main {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 header {
   height: 173px;
   width: 100%;
@@ -104,41 +115,71 @@ header {
   display: flex;
   justify-content: space-between;
   padding: $padding-l;
+  background: linear-gradient($blue, transparent);
 
-  nav {
-    ul {
-      display: flex;
-      li {
-        margin-right: 3rem;
-        a {
-          color: $light;
-          font-family: sen;
-          font-weight: 500;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    a img {
+      height: 70px;
+    }
+
+    nav {
+      ul {
+        display: flex;
+        li {
+          margin-right: 3rem;
+          a {
+            color: $light;
+            font-family: sen;
+            font-weight: 500;
+          }
+
+          a:hover {
+            color: $gray;
+          }
         }
 
-        a:hover {
-          color: $gray;
+        li:last-of-type {
+          margin: 0;
         }
       }
 
-      li:last-of-type {
-        margin: 0;
+      #collapsed-menu {
+        display: none;
       }
     }
   }
 }
 
-header.header-index {
-  background: linear-gradient($blue, transparent);
-}
-
-main div.hero {
+main .hero-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35)),
     url(../img/banner/banner-madrid-1.webp);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 65vh;
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+
+main div.hero {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -165,8 +206,9 @@ main div.hero {
   form {
     position: relative;
     width: fit-content;
+
     input {
-      width: 50vw;
+      width: 750px;
       height: 2.3rem;
       border-radius: 0.5rem;
       border: none;
@@ -201,34 +243,39 @@ footer {
   flex-direction: column;
   padding: $padding-l;
 
-  div.links {
-    display: flex;
-    justify-content: space-between;
-    line-height: 2;
-
-    div span {
-      font-size: 1.75rem;
-      font-family: sen;
-      font-weight: bold;
-    }
-
-    .social-media {
+  .footer-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    div.links {
       display: flex;
-      gap: 0.5rem;
-    }
+      justify-content: space-between;
+      line-height: 2;
 
-    .social-media a img {
-      height: 25px;
-      filter: invert(1);
-      margin-top: 1rem;
-    }
+      div span {
+        font-size: 1.75rem;
+        font-family: sen;
+        font-weight: bold;
+      }
 
-    > div:last-child {
-      margin-right: 10rem;
-    }
+      .social-media {
+        display: flex;
+        gap: 0.5rem;
+      }
 
-    ul li a:hover {
-      border-bottom: solid 2px $light;
+      .social-media a img {
+        height: 25px;
+        filter: invert(1);
+        margin-top: 1rem;
+      }
+
+      > div:last-child {
+        margin-right: 10rem;
+      }
+
+      ul li a:hover {
+        border-bottom: solid 2px $light;
+      }
     }
   }
 
@@ -322,6 +369,12 @@ main section.services {
 .spikes-divider-top,
 .spikes-divider-bottom {
   line-height: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
 
   svg path {
     fill: $light;
@@ -335,6 +388,12 @@ main section#news-section {
     display: flex;
     gap: 5rem;
     justify-content: center;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
 
     div.news-card {
       position: relative;
@@ -395,196 +454,207 @@ main section#news-section {
 
   div#news-buttons {
     background-color: $light;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    div a {
+      display: inline-block;
+      min-width: 185px;
+    }
   }
 }
 
 section#events-section {
   padding: $padding-l;
+  font-size: 16px;
 
-  div.event-buttons {
-    margin-top: 2rem;
-  }
-}
+  #events-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
 
-#events-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 2rem;
+    #date-container {
+      background-color: $blue;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column: 1 / 3;
+      border-radius: 2rem;
+      justify-items: center;
+      align-items: center;
 
-  .event-card {
-    height: 100%;
-    aspect-ratio: 1;
-    position: relative;
-    border-radius: 2rem;
+      #calendar-container {
+        height: 14em;
+        aspect-ratio: 1/1;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 6fr;
 
-    padding: 2rem;
-    overflow: hidden;
-    cursor: pointer;
+        #calendar-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1rem;
+          font-size: 1.5em;
 
-    img.event-thumb {
+          #monthDisplay {
+            font-family: sen;
+            font-weight: 600;
+            color: $white;
+          }
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: invert(1);
+          }
+        }
+
+        #calendar-weekdays {
+          color: $light;
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: 1fr;
+          text-align: center;
+          border: 0.5px solid white;
+          border-bottom: 0;
+          font-weight: bold;
+          font-size: 1.1em;
+
+          div {
+            border: 0.5px solid white;
+            border-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        #calendar-days {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+          border: 0.5px solid white;
+
+          .day {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sen;
+            color: $light;
+            font-weight: 500;
+            font-size: 1.1em;
+            cursor: pointer;
+          }
+
+          .day:hover {
+            background-color: $darkBlue;
+          }
+
+          .day + #currentDay {
+            background-color: $light;
+            color: $blue;
+            font-weight: bold;
+          }
+
+          .empty-day {
+            pointer-events: none;
+          }
+
+          .day,
+          .empty-day {
+            border: 0.5px solid white;
+          }
+
+          .day-past {
+            color: $light-semi;
+            pointer-events: none;
+          }
+
+          .selected-day {
+            background-color: $light-semi;
+          }
+
+          .selected-day:hover {
+            background-color: $light;
+            color: $blue;
+          }
+        }
+      }
+
+      #date-showcase {
+        display: flex;
+        font-size: clamp(2em, 3vw, 3em);
+        color: $white;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+
+    .event-card {
+      height: auto;
+      width: 100%;
+      aspect-ratio: 1;
+      position: relative;
+      border-radius: 2rem;
+
+      padding: 2rem;
+      overflow: hidden;
+      cursor: pointer;
+
+      img.event-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      p.event-head {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .event-card:hover {
+      text-decoration: underline white;
+    }
+
+    .event-card::after {
+      content: "";
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    p.event-head {
-      position: absolute;
-      top: 75%;
-      left: 0;
-      color: $white;
-      font-size: 1rem;
-      font-weight: 600;
-      position: relative;
-      z-index: 2;
-    }
-  }
-
-  .event-card:hover {
-    text-decoration: underline white;
-  }
-
-  .event-card::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 35%;
-    z-index: 1;
-    pointer-events: none;
-    background-color: $dark;
-    filter: opacity(0.5);
-  }
-
-  .event-card:hover::after {
-    filter: opacity(0.7);
-  }
-
-  .no-events {
-    background-color: $gray;
-    pointer-events: none;
-  }
-}
-
-#date-container {
-  background-color: $blue;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column: 1 / 3;
-  border-radius: 2rem;
-}
-
-#date-showcase {
-  display: flex;
-  font-size: 3rem;
-  color: $white;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#calendar-container {
-  height: 225px;
-  aspect-ratio: 1/1;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 6fr;
-
-  #calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    font-size: 1.5rem;
-
-    #monthDisplay {
-      font-family: sen;
-      font-weight: 600;
-      color: $white;
-    }
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      filter: invert(1);
-    }
-  }
-
-  #calendar-weekdays {
-    color: $light;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr;
-    text-align: center;
-    border: 0.5px solid white;
-    border-bottom: 0;
-    font-weight: bold;
-    font-size: 1.1rem;
-
-    div {
-      border: 0.5px solid white;
-      border-bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  #calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    border: 0.5px solid white;
-
-    .day {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: sen;
-      color: $light;
-      font-weight: 500;
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-
-    .day:hover {
-      background-color: $darkBlue;
-    }
-
-    .day + #currentDay {
-      background-color: $light;
-      color: $blue;
-      font-weight: bold;
-    }
-
-    .empty-day {
+      height: 35%;
+      z-index: 1;
       pointer-events: none;
+      background-color: $dark;
+      filter: opacity(0.5);
     }
 
-    .day,
-    .empty-day {
-      border: 0.5px solid white;
+    .event-card:hover::after {
+      filter: opacity(0.7);
     }
 
-    .day-past {
-      color: $light-semi;
+    .no-events {
+      background-color: $gray;
       pointer-events: none;
-    }
-
-    .selected-day {
-      background-color: $light-semi;
-    }
-
-    .selected-day:hover {
-      background-color: $light;
-      color: $blue;
     }
   }
 }
@@ -609,6 +679,10 @@ section#map-section {
       //   color: $red;
       //   cursor: pointer;
       // }
+    }
+
+    div#district-list-mobile {
+      display: none;
     }
 
     div#district-map-info {
@@ -670,8 +744,221 @@ section#map-section {
     fill: $red;
     color: $red;
   }
+}
 
-  // path.cls-3:hover {
-  //   fill: $red;
-  // }
+@media only screen and (min-aspect-ratio: 0.3) and (max-aspect-ratio: 4/3) {
+  main {
+    overflow: hidden;
+  }
+
+  section.spiky-bg h2 {
+    padding-left: $padding-xaxis-s;
+  }
+
+  header {
+    height: 173px;
+    padding: $padding-s;
+
+    .header-container {
+      nav {
+        display: flex;
+        justify-content: center;
+
+        ul {
+          display: none;
+        }
+
+        #collapsed-menu {
+          display: flex;
+          span {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  header.header-index {
+    a img {
+      height: 50px;
+    }
+  }
+
+  main div.hero {
+    background-size: 200%;
+    background-position: bottom;
+    padding: $padding-s;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    form {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    padding: $padding-s;
+
+    .footer-container {
+      div.links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .social-media a img {
+          height: 35px;
+        }
+
+        > div:last-child {
+          margin-right: 0;
+        }
+      }
+
+      div.credits {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        img {
+          height: 70px;
+          margin: 2rem 0;
+        }
+
+        p {
+          align-self: end;
+        }
+      }
+    }
+  }
+
+  main section.services {
+    padding: $padding-s;
+
+    #bubbles-container {
+      display: flex;
+      gap: 1rem;
+
+      .service-bubble {
+        width: 90px;
+      }
+      .service-name {
+        text-align: center;
+        font-family: sen;
+        color: $blue;
+        font-weight: 800;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .spikes-divider-top,
+  .spikes-divider-bottom {
+    width: 250%;
+  }
+
+  main section#news-section {
+    div#news-container {
+      padding: $padding-s;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    div#news-buttons {
+      flex-direction: column;
+      padding: $padding-xaxis-s;
+      text-align: center;
+    }
+  }
+
+  section#events-section {
+    padding: $padding-s;
+
+    #events-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto repeat(3, 47vw);
+      gap: 1rem;
+
+      #date-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: 1rem;
+
+        #calendar-container {
+          height: 17em;
+        }
+      }
+
+      .event-card {
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+        padding: 1rem;
+
+        p.event-head {
+          font-size: clamp(1rem, 1.5vw, 5rem);
+        }
+      }
+    }
+  }
+
+  section#map-section {
+    padding: $padding-s;
+
+    div#districts {
+      display: flex;
+      flex-direction: column;
+
+      div#district-list-desktop ul {
+        display: none;
+      }
+
+      div#district-list-mobile {
+        display: flex;
+        width: 100%;
+        margin-bottom: 2rem;
+        select {
+          all: unset;
+          width: 100%;
+          display: inline-block;
+          color: $white;
+          padding: 0.7rem 1.5rem;
+          border-radius: 0.7rem;
+          background-color: $blue;
+          font-family: sen;
+          font-weight: 600;
+        }
+      }
+
+      div#district-map-info {
+        border-radius: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 0;
+        padding: 2rem 2rem;
+        align-items: center;
+        justify-content: center;
+
+        #district-info {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+
+        #district-map svg {
+          height: 250px;
+        }
+      }
+    }
+  }
 }

@@ -23,29 +23,40 @@
 
 <body>
     <header class="header-index">
-        <a href="./index.html"><img src="./img/brand-icons/madrid-logo.svg" height="70" alt="Logo de Madrid"></a>
-        <nav>
-            <ul>
-                <li><a href="#services-section">Servicios y trámites</a></li>
-                <li><a href="#news-section">Noticias</a></li>
-                <li><a href="#">Ayuntamiento</a></li>
-                <li><a href="#events-section">Eventos</a></li>
-                <li><a href="#map-section">Distritos</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <a href="./index.html"><img src="./img/brand-icons/madrid-logo.svg" alt="Logo de Madrid"></a>
+            <nav>
+                <ul>
+                    <li><a href="#services-section">Servicios y trámites</a></li>
+                    <li><a href="#news-section">Noticias</a></li>
+                    <li><a href="#">Ayuntamiento</a></li>
+                    <li><a href="#events-section">Eventos</a></li>
+                    <li><a href="#map-section">Distritos</a></li>
+                </ul>
+                <div id="collapsed-menu">
+
+                    <span class="material-icons">
+                        menu
+                    </span>
+                </div>
+            </nav>
+        </div>
+
     </header>
 
 
     <main>
-        <div class="hero">
-            <h1>¡Bienvenido a <span>Madrid</span>!</h1>
-            <p>¿En qué podemos ayudarle?</p>
-            <form action="/search" method="get">
-                <input type="text" name="q" placeholder="Comienza aquí tu búsqueda">
-                <button type="submit"><span class="material-icons">
-                        search
-                    </span></button>
-            </form>
+        <div class="hero-container">
+            <div class="hero">
+                <h1>¡Bienvenido a <span>Madrid</span>!</h1>
+                <p>¿En qué podemos ayudarle?</p>
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="Comienza aquí tu búsqueda">
+                    <button type="submit"><span class="material-icons">
+                            search
+                        </span></button>
+                </form>
+            </div>
         </div>
 
 
@@ -100,8 +111,9 @@
             </div>
 
             <div id="news-buttons" class="section-buttons">
-                <a class="button" href="#">Todas las noticias</a>
-                <a class="button" href="#">Diario Madrid</a>
+                <div><a class="button" href="#">Todas las noticias</a></div>
+                <div><a class="button" href="#">Diario Madrid</a></div>
+
             </div>
 
 
@@ -121,6 +133,8 @@
                 </g>
             </svg>
         </div>
+
+
         <section id="events-section">
             <h2>Eventos</h2>
             <div id="events-container">
@@ -155,7 +169,6 @@
                     <div id="date-showcase"></div>
                 </div>
 
-
                 <template id="events-template">
                     <div class="event-card">
                         <img class="event-thumb" src="" alt="">
@@ -170,8 +183,6 @@
                         </p>
                     </div>
                 </template>
-
-
             </div>
             <div class="section-buttons">
                 <a class="button" href="#">Todos los eventos</a>
@@ -185,6 +196,11 @@
                     <ul>
 
                     </ul>
+                </div>
+                <div id="district-list-mobile">
+                    <select name="" id="">
+                        <option value=""></option>
+                    </select>
                 </div>
                 <div id="district-map-info">
                     <div id="district-map">
@@ -346,50 +362,53 @@
 
 
     <footer>
-        <div class="links">
-            <div class="contact"><span>Contacto</span>
-                <ul>
-                    <li><a href="#">En portada</a></li>
-                    <li><a href="#">Direcciones y teléfonos</a></li>
-                    <li><a href="#">Sugerencias y reclamaciones</a></li>
-                    <li><a href="#">Atención a la ciudadanía</a></li>
-                </ul>
-                <div class="social-media">
-                    <a href="#"><img src="./img/icons/social-media/instagram-fill.svg" alt=""></a>
-                    <a href="#"><img src="./img/icons/social-media/facebook-fill.svg" alt=""></a>
-                    <a href="#"><img src="./img/icons/social-media/youtube-fill.svg" alt=""></a>
-                    <a href="#"><img src="./img/icons/social-media/twitter-fill.svg" alt=""></a>
+        <div class="footer-container">
+            <div class="links">
+                <div class="contact"><span>Contacto</span>
+                    <ul>
+                        <li><a href="#">En portada</a></li>
+                        <li><a href="#">Direcciones y teléfonos</a></li>
+                        <li><a href="#">Sugerencias y reclamaciones</a></li>
+                        <li><a href="#">Atención a la ciudadanía</a></li>
+                    </ul>
+                    <div class="social-media">
+                        <a href="#"><img src="./img/icons/social-media/instagram-fill.svg" alt=""></a>
+                        <a href="#"><img src="./img/icons/social-media/facebook-fill.svg" alt=""></a>
+                        <a href="#"><img src="./img/icons/social-media/youtube-fill.svg" alt=""></a>
+                        <a href="#"><img src="./img/icons/social-media/twitter-fill.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="procedures"><span>Trámites</span>
+                    <ul>
+                        <li><a href="#">Ciudadanía</a></li>
+                        <li><a href="#">Empresas</a></li>
+                        <li><a href="#">Conozca la Sede</a></li>
+                        <li><a href="#">Mi Carpeta</a></li>
+                        <li><a href="#">Publicaciones oficiales</a></li>
+                    </ul>
+                </div>
+                <div class="council"><span>El Ayuntamiento</span>
+                    <ul>
+                        <li><a href="#">En portada</a></li>
+                        <li><a href="#">Gobierno</a></li>
+                        <li><a href="#">El Pleno</a></li>
+                        <li><a href="#">Alcaldía</a></li>
+                        <li><a href="#">Organización municipal</a></li>
+                        <li><a href="#">Gobierno abierto</a></li>
+                        <li><a href="#">Publicaciones y Convocatorias</a></li>
+                        <li><a href="#">Medios de comuniación</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="procedures"><span>Trámites</span>
-                <ul>
-                    <li><a href="#">Ciudadanía</a></li>
-                    <li><a href="#">Empresas</a></li>
-                    <li><a href="#">Conozca la Sede</a></li>
-                    <li><a href="#">Mi Carpeta</a></li>
-                    <li><a href="#">Publicaciones oficiales</a></li>
-                </ul>
-            </div>
-            <div class="council"><span>El Ayuntamiento</span>
-                <ul>
-                    <li><a href="#">En portada</a></li>
-                    <li><a href="#">Gobierno</a></li>
-                    <li><a href="#">El Pleno</a></li>
-                    <li><a href="#">Alcaldía</a></li>
-                    <li><a href="#">Organización municipal</a></li>
-                    <li><a href="#">Gobierno abierto</a></li>
-                    <li><a href="#">Publicaciones y Convocatorias</a></li>
-                    <li><a href="#">Medios de comuniación</a></li>
-                </ul>
+
+
+
+            <div class="credits">
+                <img src="./img/brand-icons/madrid-logo.svg" alt="logo de Madrdid" height="50">
+                <p>Diseñado por <span><a href="">Tomás Volpini</a></span></p>
             </div>
         </div>
 
-
-
-        <div class="credits">
-            <img src="./img/brand-icons/madrid-logo.svg" alt="logo de Madrdid" height="50">
-            <p>Diseñado por <span><a href="">Tomás Volpini</a></span></p>
-        </div>
     </footer>
 
 </body>

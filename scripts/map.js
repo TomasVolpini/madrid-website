@@ -11,6 +11,25 @@ function renderDistrictList(districts) {
   mapHover(districtsData);
 }
 
+function renderDistrictListMobile(districts) {
+  const sel = document.querySelector("#district-list-mobile select");
+  const placeholder = document.createElement("option");
+  placeholder.textContent = "Selecciona un distrito...";
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  sel.appendChild(placeholder);
+
+  districts.forEach((dis) => {
+    const op = document.createElement("option");
+    op.innerText = `${dis.name}`;
+    op.value = `${dis.id}`;
+    op.id = `${dis.id}`;
+    sel.appendChild(op);
+  });
+  const districtsData = [...districts];
+  mapHover(districtsData);
+}
+
 function mapHover(districtsData) {
   const paths = document.querySelectorAll("#map g#madrid-map g ");
 
@@ -111,10 +130,26 @@ function clickedDistrict(info, id) {
   }
 }
 
-fetch("./json/map.json")
-  .then((res) => res.json())
-  .then((data) => {
-    renderDistrictList(data.district);
-    clickedDistrict(data, "");
-  })
-  .catch((error) => console.error(error));
+const mqDesktop = window.matchMedia("(min-aspect-ratio: 4/3)");
+
+function handleDesktopAspectRatio(e) {
+  if (e.matches) {
+    fetchDistricts(renderDistrictList);
+  } else {
+    fetchDistricts(renderDistrictListMobile);
+  }
+}
+
+handleDesktopAspectRatio(mqDesktop);
+
+mqDesktop.addEventListener("change", handleDesktopAspectRatio);
+
+function fetchDistricts(renderDistrict) {
+  fetch("./json/map.json")
+    .then((res) => res.json())
+    .then((data) => {
+      renderDistrict(data.district);
+      clickedDistrict(data, "");
+    })
+    .catch((error) => console.error(error));
+}

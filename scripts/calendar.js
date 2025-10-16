@@ -101,7 +101,7 @@ function renderDate() {
   const day = parts.find((p) => p.type === "day").value;
   const month = parts.find((p) => p.type === "month").value;
 
-  datesDiv.innerHTML = `${weekday} <br> ${day} <br> ${month}`;
+  datesDiv.innerHTML = `${weekday}  ${day}  ${month}`;
 
   const partsFilter = new Intl.DateTimeFormat("es-ES", {
     year: "numeric",
