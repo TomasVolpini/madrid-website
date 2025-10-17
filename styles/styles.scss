@@ -421,7 +421,7 @@ main section#news-section {
 
       p.news-head {
         color: $white;
-        font-size: 0.75rem;
+        font-size: 14px;
         position: relative;
         z-index: 2;
       }
@@ -906,7 +906,7 @@ section#map-section {
         padding: 1rem;
 
         p.event-head {
-          font-size: clamp(1rem, 1.5vw, 5rem);
+          font-size: clamp(14px, 1.5vw, 5rem);
         }
       }
     }

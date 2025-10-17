@@ -1,30 +1,15 @@
 function renderDistrictList(districts) {
   const ul = document.querySelector("#district-list-desktop ul");
+  clicked = null;
+  unclick();
+
+  ul.innerHTML = "";
 
   districts.forEach((dis) => {
     const li = document.createElement("li");
     li.innerText = `${dis.name}`;
     li.id = `${dis.id}`;
     ul.appendChild(li);
-  });
-  const districtsData = [...districts];
-  mapHover(districtsData);
-}
-
-function renderDistrictListMobile(districts) {
-  const sel = document.querySelector("#district-list-mobile select");
-  const placeholder = document.createElement("option");
-  placeholder.textContent = "Selecciona un distrito...";
-  placeholder.disabled = true;
-  placeholder.selected = true;
-  sel.appendChild(placeholder);
-
-  districts.forEach((dis) => {
-    const op = document.createElement("option");
-    op.innerText = `${dis.name}`;
-    op.value = `${dis.id}`;
-    op.id = `${dis.id}`;
-    sel.appendChild(op);
   });
   const districtsData = [...districts];
   mapHover(districtsData);
@@ -72,6 +57,55 @@ function mapHover(districtsData) {
       fill.classList.add("district-clicked");
       match.classList.add("district-clicked");
       clickedDistrict(districtsData, `${path.id}`);
+    });
+  });
+}
+
+function renderDistrictListMobile(districts) {
+  const sel = document.querySelector("#district-list-mobile select");
+  const placeholder = document.createElement("option");
+  placeholder.textContent = "Selecciona un distrito...";
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  sel.appendChild(placeholder);
+  clicked = null;
+  unclick();
+
+  districts.forEach((dis) => {
+    const op = document.createElement("option");
+    op.innerText = `${dis.name}`;
+    op.value = `${dis.id}`;
+    op.id = `${dis.id}`;
+    sel.appendChild(op);
+  });
+  const districtsData = [...districts];
+  mapSelectMobile(districtsData);
+}
+
+function mapSelectMobile(districtsData) {
+  const paths = document.querySelectorAll("#map g#madrid-map g ");
+  const list = document.querySelector(`#district-list-mobile select`);
+
+  paths.forEach((path) => {
+    const fill = path.querySelector("path.cls-3");
+    const match = path.id;
+
+    path.addEventListener("click", () => {
+      clicked = `${path.id}`;
+      unclick();
+      fill.classList.add("district-clicked");
+      list.value = clicked;
+      clickedDistrict(districtsData, `${path.id}`);
+    });
+
+    list.addEventListener("change", () => {
+      clicked = `${list.value}`;
+
+      if (clicked === match) {
+        unclick();
+        fill.classList.add("district-clicked");
+      }
+      clickedDistrict(districtsData, `${list.value}`);
     });
   });
 }

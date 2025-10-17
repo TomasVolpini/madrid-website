@@ -364,7 +364,7 @@ main section#news-section div#news-container div.news-card img.news-thumb {
 }
 main section#news-section div#news-container div.news-card p.news-head {
   color: white;
-  font-size: 0.75rem;
+  font-size: 14px;
   position: relative;
   z-index: 2;
 }
@@ -765,7 +765,7 @@ section#map-section .district-clicked {
     padding: 1rem;
   }
   section#events-section #events-container .event-card p.event-head {
-    font-size: clamp(1rem, 1.5vw, 5rem);
+    font-size: clamp(14px, 1.5vw, 5rem);
   }
   section#map-section {
     padding: 2rem 1.5rem;
